@@ -32,7 +32,7 @@ SECRET_KEY = 'django-insecure-^gz*8p(tnh0_)u8m@_9i(nh^)fs!f775z^)2hxs4^xgh!^!sea
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['beyond-the-seas.onrender.com', '127.0.0.1']
 
 
 # Application definition
