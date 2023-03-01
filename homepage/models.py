@@ -9,10 +9,11 @@ class University(models.Model):
 	university_id = models.UUIDField(primary_key=True, default=uuid.uuid4, help_text='Unique ID for university')
 	university_name = models.CharField(max_length=1000)
 	university_type = models.CharField(max_length=200)
+	university_pic = models.CharField(max_length=1000, default='https://media.istockphoto.com/id/1271611698/photo/maclaurin-building-number-10-and-killian-court.jpg?s=612x612&w=0&k=20&c=P6dVcDDQVaoSDq6JzX3CyY9mWiMF2oQbeB2sjsrVZeo=')
 	university_rank = models.IntegerField()
 	
     # foreign key location id    
-	
+
 	university_location = models.ForeignKey('Location', on_delete=models.SET_NULL, null=True)
 	university_link = models.CharField(max_length=1000, default='http://csrankings.com')
 
