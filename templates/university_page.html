@@ -1,0 +1,126 @@
+{% extends 'base_with_navbar_and_offcanvas.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- Bootstrap core CSS -->
+<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+    .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+    }
+
+    @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+        }
+    }
+
+    .book_image {
+        width: 40%;
+        float: left;
+    }
+
+    .book_desc {
+        width: 60%;
+        height: 495px;
+        float: right;
+    }
+
+    .checked {
+        color: #f7710a;
+    }
+
+    .cart_modal {
+        background-color: #daebf2;
+    }
+
+    .my-isbn {
+        display: none;
+    }
+
+    .border-style {
+        border: solid;
+    }
+
+    .feedback {
+        background-color: #f7f8fa;
+        border: solid;
+    }
+</style>
+
+
+</head>
+
+<body>
+
+    <main>
+
+
+
+        <!-- book overview div -->
+
+        <div class="container py-4">
+            <header class="pb-3 mb-4 border-bottom">
+                <a href="#" class="d-flex align-items-center text-dark text-decoration-none">
+                    <span class="fs-4">
+                        <h1>University Details</h1>
+                    </span>
+                </a>
+            </header>
+
+            
+            <div class="row align-items-md-stretch">
+                <div class="p-3 mb-2 bg-light border-style">
+                    <div class="book_image mt-3 pt-3" align="center">
+                        <figure class="figure">
+                            <!-- <figcaption class="figure-caption">A caption for the above image.</figcaption> -->
+                        </figure>
+                    </div>
+                    <div class="container-fluid py-4 book_desc" align="center">
+
+                        <h2 class="display-5 fw-bold text-dark">{{university_name}}</h2>
+
+                        <h4 class="col-md-12 fs-3"> Rank: {{university_rank}} </h4>
+                        <h4 class="col-md-12 fs-3"> Website: {{university_website}} </h4>
+                        <h4 class="col-md-12 fs-3"> Type: {{university_type}} </h4>
+
+                        <h4 class="display-6 fw-bold text-dark"> Location Details</h4>
+                        <h4 class="col-md-12 fs-3"> Location: {{university_location}} </h4>
+                        <h4 class="col-md-12 fs-3"> Average Cost: {{living_cost}}$ </h4>
+                        <h4 class="col-md-12 fs-3"> Weather: {{weather}} </h4>
+                        
+                    </div>
+                </div>
+            </div>
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.my-edit-btn').click(function () {
+            var v = $(event.target).parent().siblings(".my-isbn").text();
+            $("#modal-isbn").val(v);
+
+        });
+        $('.my-wish-btn').click(function () {
+            var v = $(event.target).parent().siblings(".my-isbn").text();
+            $("#modal-wish-isbn").val(v);
+
+        });
+        $('.my-borrow-btn').click(function () {
+            var v = $(event.target).parent().siblings(".my-isbn").text();
+            $("#modal-borrow-isbn").val(v);
+
+        });
+    });
+</script>
+
+{% endblock %}

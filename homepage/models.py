@@ -12,7 +12,7 @@ class University(models.Model):
 	university_rank = models.IntegerField()
 	
     # foreign key location id    
-    
+	
 	university_location = models.ForeignKey('Location', on_delete=models.SET_NULL, null=True)
 	university_link = models.CharField(max_length=1000, default='http://csrankings.com')
 
