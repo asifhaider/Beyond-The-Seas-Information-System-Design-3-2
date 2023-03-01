@@ -25,12 +25,23 @@ def show_homepage(request):
 def search(request):
     if request.method == 'POST':
         search_key = str(request.POST.get('search'))
-        print("baraland")
+        
         # search by university name
         university_list = list(University.objects.filter(university_name__icontains=search_key))
         print(university_list)
         return render(request, 'homepage.html',
                         {'university_list': university_list})
+    
+
+def sort(request):
+    # sort the university based on rank
+    if request.method == 'POST':
+        print("baraland")
+        university_list = list(University.objects.all().order_by('university_rank'))
+        print(university_list)
+        return render(request, 'homepage.html',
+                        {'university_list': university_list})
+
 
 
 # class BookAuthorModel:

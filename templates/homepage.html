@@ -45,7 +45,7 @@
         </p> -->
         <div class="card mb-3" style="background: transparent;">
           <div class="card-body text-dark">
-            <form action="{% url 'homepage' %}" method="post">
+            <form action="{% url 'sort' %}" method="post">
               {% csrf_token %}
               <h5 class="card-header mb-3" style="background: transparent;">
                 <input type="submit" class = "btn btn-primary" value = "Sort">
@@ -100,12 +100,15 @@
 
               <h5 class="card-title" style="font-size: larger;" align="center"> <strong> {{university.university_name}} </strong>
               </h5>
-              <p class="card-subtitle" style="font-size: large;" align="center"><strong>{{university.university_type}}</strong>
+              <p class="card-subtitle" style="font-size: large;" align="center"><strong>Type: {{university.university_type}}</strong>
               </p>
-              <p class="card-text" style="font-size: large;" align="center"><strong>{{university.university_location}}</strong>
+              <p class="card-text" style="font-size: large;" align="center"><strong>Location: {{university.university_location}}</strong>
               </p>
               <p class="card-text" style="font-size: large;" align="center"><strong>{{university.university_website}}</strong>
               </p>
+              <p class="card-text" style="font-size: large;" align="center"><strong>Rank: {{university.university_rank}}</strong>
+              </p>
+              
 
               <!-- {% if book.discountedprice %}
               <p class="card-text" align="center"> ৳ <strike>{{book.price}}</strike> {{book.discountedprice}}</p>
