@@ -17,9 +17,20 @@ from homepage.models import University, Location, Feedback, Student, Professor
 
 def show_homepage(request):
     university_list = list(University.objects.all())
-    print(university_list)
+    # print(university_list)
     return render(request, 'homepage.html',
                   {'university_list': university_list})
+
+
+def search(request):
+    if request.method == 'POST':
+        search_key = str(request.POST.get('search'))
+        print("baraland")
+        # search by university name
+        university_list = list(University.objects.filter(university_name__icontains=search_key))
+        print(university_list)
+        return render(request, 'homepage.html',
+                        {'university_list': university_list})
 
 
 # class BookAuthorModel:

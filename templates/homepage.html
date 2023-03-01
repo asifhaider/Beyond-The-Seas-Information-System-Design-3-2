@@ -54,33 +54,9 @@
               <div class="form-check">
                 <input class="form-check-input" type="radio" name="lowtohigh" value="1" id="lowtohigh">
                 <label class="form-check-label" for="lowtohigh">
-                  <strong>Price - Low To High</strong>
-
+                  <strong>Rank</strong>
                 </label>
               </div>
-
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="hightolow" value="2" id="hightolow">
-                <label class="form-check-label" for="hightolow">
-                  <strong>Price - High To Low</strong>
-                </label>
-              </div>
-
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="newtoold" value="3" id="newtoold">
-                <label class="form-check-label" for="newtoold">
-                  <strong> Published - New To Old </strong>
-                </label>
-              </div>
-
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="oldtonew" value="4" id="oldtonew">
-                <label class="form-check-label" for="oldtonew">
-                  <strong> Published - Old To New</strong>
-                </label>
-              </div>
-
-
             </form>
 
           </div>
@@ -88,36 +64,8 @@
 
         <!-- Genre Filter -->
 
-
-        <div class="card mb-3" style="background: transparent;">
-          <div class="card-body text-dark">
-            <form action="{% url 'homepage' %}" method="post">
-              {% csrf_token %}
-              <h5 class="card-header mb-3" style="background: transparent;">
-                <input type="submit" class = "btn btn-primary" name = "type-filter" value = "Filter">
-              </h5>
-
-              {% for i in types %}
-
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" name="genre" value="{{i}}">
-                <label class="form-check-label" for="{{i}}">
-                  <strong>{{i}}</strong>
-                </label>
-              </div>
-
-              {% endfor %}
-
-              <input type="hidden" id="type_list" name="types" value="types">
-
-            </form>
-          </div>
-        </div>
-
-
-      </div>
-
     </div>
+  </div>
   </div>
 
 
