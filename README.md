@@ -1,16 +1,19 @@
+# Public link
+- [Beyond The Seas](https://beyond-the-seas.onrender.com/)
+
 # Steps to run in local
 
 - git clone
 - cd into the repo (not into the project root)
-- $ source testenv/bin/activate
+- create a new virtual environment and activate it
+- run ```pip -r requirements.txt``` to install dependencies
 - cd into the project root
-- go
-- $ deactivate, when done
+- ready!
 
 
-# Development
+# Development Logs
 
-## Virtual Environment
+## 1. Virtual Environment
 
 - [venv link](https://docs.python.org/3/tutorial/venv.html)
 - python3.10-venv
@@ -25,15 +28,15 @@
 - $ pip install dj-database-url
 - $ pip install django-environ
 
-## Django Project
+## 2. Django
+### Project and Apps
 
 - $ django-admin startproject ```beyondtheseas```
 - ```beyondtheseas``` is the root
 - python manage.py runserver <port> (by default 8000)
 - $ python manage.py startapp ```homepage```
+- $ python manage.py startapp ```university```
 
-
-## Django App
 
 ### Views
 
@@ -60,19 +63,10 @@
 - sudo service postgresql restart
 
 
-# Deploy
+## 3. Deployment
 
-## Render 
+### Render 
 
 - Create account and authorize with GitHub profile
-- Create a postgres database 
-    - Hostname: ```dpg-cfv2gmd3t39doavp4hu0-a```
-    - Port: ```5432```
-    - Database: ```beyondtheseasdatabase```
-    - Username: ```beyondtheseasdatabase_user```
-    - Password: ```CzGn3A8SvcwZ23ooYHPZ8NYHjn52MH5O```
-    - Internal DB URL: ```postgres://beyondtheseasdatabase_user:CzGn3A8SvcwZ23ooYHPZ8NYHjn52MH5O@dpg-cfv2gmd3t39doavp4hu0-a/beyondtheseasdatabase```
-    - External DB URL: ```postgres://beyondtheseasdatabase_user:CzGn3A8SvcwZ23ooYHPZ8NYHjn52MH5O@dpg-cfv2gmd3t39doavp4hu0-a.singapore-postgres.render.com/beyondtheseasdatabase```
-    - PSQL command: ```PGPASSWORD=CzGn3A8SvcwZ23ooYHPZ8NYHjn52MH5O psql -h dpg-cfv2gmd3t39doavp4hu0-a.singapore-postgres.render.com -U beyondtheseasdatabase_user beyondtheseasdatabase```
-
+- Create a postgres database and web hosting services
 - pip install gunicorn
